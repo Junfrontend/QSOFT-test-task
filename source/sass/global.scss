@@ -1,0 +1,64 @@
+//fonts
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto"),
+    /* Если не получилось, загрузит woff2 */
+    url("/fonts/Roboto-Medium.woff2") format("woff2"),
+    url("/fonts/Roboto-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+
+$font-family: "Roboto", "Arial", sans-serif;
+
+
+//variables
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+
+//colors
+$color-spindle: #bbc4d6;
+$color-black-pearl: #121920;
+$color-lavender: #ebebf1;
+$color-light-slate-grey: #768298;
+
+//mixins
+@mixin viewport--tablet {
+  @media (max-width: $breakpoint-desktop - 1) {
+    @content;
+  }
+}
+
+@mixin viewport--mobile {
+  @media (max-width: $breakpoint-tablet - 1) {
+    @content;
+  }
+}
+
+
+//global styles
+body {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.container {
+  padding: 0 135px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @include viewport--tablet {
+    padding: 0 20px;
+  }
+}

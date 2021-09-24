@@ -1,0 +1,45 @@
+.user-info {
+  margin-right: 117px;
+  padding: 20px 20px 15px 19px;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid $color-lavender;
+
+  span {
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 120%;
+    color: $color-light-slate-grey;
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+    letter-spacing: 0.1px;
+  }
+}
+
+.user-info__img-wrapper {
+  border-radius: 50%;
+}
+
+@include viewport--tablet {
+  .user-info {
+    margin: 0;
+  }
+}
+
+@include viewport--mobile {
+  .user-info {
+    border: none;
+    margin-top: 2px;
+    padding-bottom: 12px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
